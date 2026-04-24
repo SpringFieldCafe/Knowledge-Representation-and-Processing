@@ -190,3 +190,22 @@ class expersys(object):
         R15_consequent.family = '丹顶鹤'
         R15.setConsequent(R15_consequent)
         self.rules.append(R15)
+
+
+
+    def setFacts(self,_facts):
+        for ani in _facts:
+            f=animal()
+            f.clone(ani)
+            self.facts.append(f)
+            d=animal()
+            d.clone(ani)
+            self.dataset.append(d)
+
+        def forwardReasoning(self):
+            for d in self.dataset:
+                for r in self.rules:
+                    if r.match(d):
+                        r.execute(d)
+
+            d.output()
