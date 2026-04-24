@@ -1,8 +1,8 @@
-import animal
-import rule
+from animal import animal
+from rule import rule
 
 
-class expersys(object):
+class expertsys(object):
     def __init__(self):
         self.facts=[]
         self.rules=[]
@@ -202,10 +202,10 @@ class expersys(object):
             d.clone(ani)
             self.dataset.append(d)
 
-        def forwardReasoning(self):
-            for d in self.dataset:
-                for r in self.rules:
-                    if r.match(d):
-                        r.execute(d)
+    def forwardReasoning(self):
+        for d in self.dataset:
+            for r in self.rules:
+                if r.match(d):
+                    r.execute(d)
 
             d.output()

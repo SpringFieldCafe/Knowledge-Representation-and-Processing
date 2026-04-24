@@ -1,4 +1,4 @@
-import animal
+from animal import animal
 
 class rule(object):
     def __init__(self):
